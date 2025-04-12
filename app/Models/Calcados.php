@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Calcado extends Model
+class Calcados extends Model
 {
     protected $fillable = [
         'marca',

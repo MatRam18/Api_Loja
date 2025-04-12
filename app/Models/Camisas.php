@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Camisa extends Model
+class Camisas extends Model
 {
     protected $fillable = [
         'marca',

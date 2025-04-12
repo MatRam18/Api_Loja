@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('marca');
             $table->string('cor');
             $table->string('tipo');
-            $table->string('tamanho');
+            $table->interger('tamanho');
             $table->timestamps();
         });
     }

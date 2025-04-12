@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Camisa;
+use App\Models\Camisas;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
@@ -15,7 +15,7 @@ class CamisaController extends Controller
      */
     public function index()
     {
-        $registros = Camisa::All();
+        $registros = Camisas::All();
 
         //Contando o número de registros
         $contador = $registros->count();
@@ -57,7 +57,7 @@ class CamisaController extends Controller
             ], 400);
         }
 
-        $registros = Camisa::create($request->all());
+        $registros = Camisas::create($request->all());
 
         if($registros) {
             return response()->json([
@@ -75,7 +75,7 @@ class CamisaController extends Controller
 
     public function show($id)
     {
-        $registros = Camisa::find($id);
+        $registros = Camisas::find($id);
 
         if($registros){
             return response()->json([
@@ -109,7 +109,7 @@ class CamisaController extends Controller
             ], 400);
         }
 
-        $registrosBanco = Camisa::find($id);
+        $registrosBanco = Camisas::find($id);
 
         if (!$registrosBanco) {
             return response()->json([
@@ -139,7 +139,7 @@ class CamisaController extends Controller
 
     public function destroy($id)
     {
-        $registros = Camisa::find($id);
+        $registros = Camisas::find($id);
 
         if(!$registros) {
             return response()->json([

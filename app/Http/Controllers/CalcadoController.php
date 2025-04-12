@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Calcado;
+use App\Models\Calcados;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -13,7 +13,7 @@ class CalcadoController extends Controller
      */
     public function index()
     {
-        $registros = Calcado::All();
+        $registros = Calcados::All();
 
         //Contando o número de registros
         $contador = $registros->count();
@@ -56,7 +56,7 @@ class CalcadoController extends Controller
             ], 400);
         }
 
-        $registros = Calcado::create($request->all());
+        $registros = Calcados::create($request->all());
 
         if($registros) {
             return response()->json([
@@ -74,7 +74,7 @@ class CalcadoController extends Controller
 
     public function show($id)
     {
-        $registros = Calcado::find($id);
+        $registros = Calcados::find($id);
 
         if($registros) {
             return response()->json([
@@ -107,7 +107,7 @@ class CalcadoController extends Controller
             ], 400);
         }
 
-        $registrosBanco = Calcado::find($id);
+        $registrosBanco = Calcados::find($id);
 
         if (!$registrosBanco) {
             return response()->json([
@@ -137,7 +137,7 @@ class CalcadoController extends Controller
 
     public function destroy($id)
     {
-        $registros = Calcado::find($id);
+        $registros = Calcados::find($id);
 
         if(!$registros) {
             return response()->json([
